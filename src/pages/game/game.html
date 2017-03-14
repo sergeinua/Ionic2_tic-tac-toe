@@ -14,21 +14,23 @@
 
 
 <ion-content padding>
-  <ion-grid>
+  <p>{{activePlayer.description}}</p>
+  <ion-grid *ngIf="!winner">
     <ion-row>
-      <ion-col class="field" col-4>{{field.first}}</ion-col>
-      <ion-col class="field" col-4>{{field.second}}</ion-col>
-      <ion-col class="field" col-4>{{field.third}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('first', activePlayer.legend)">{{field.first}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('second', activePlayer.legend)">{{field.second}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('third', activePlayer.legend)">{{field.third}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="field" col-4>{{field.fourth}}</ion-col>
-      <ion-col class="field" col-4>{{field.fifth}}</ion-col>
-      <ion-col class="field" col-4>{{field.sixth}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('fourth', activePlayer.legend)">{{field.fourth}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('fifth', activePlayer.legend)">{{field.fifth}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('sixth', activePlayer.legend)">{{field.sixth}}</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col class="field" col-4>{{field.seventh}}</ion-col>
-      <ion-col class="field" col-4>{{field.eighth}}</ion-col>
-      <ion-col class="field" col-4>{{field.ninth}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('seventh', activePlayer.legend)">{{field.seventh}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('eighth', activePlayer.legend)">{{field.eighth}}</ion-col>
+      <ion-col class="field" col-4 (click)="handleProcess('ninth', activePlayer.legend)">{{field.ninth}}</ion-col>
     </ion-row>
   </ion-grid>
+  <p *ngIf="winner">{{winner}}</p>
 </ion-content>
