@@ -96,9 +96,8 @@ export class GamePage {
             this.field[fieldItem] = legend;
             if (this.detectWinner()) {
                 this.gameIsActive = false;
-                alert(this.activePlayer.title+'wins');
+                this.winner = this.activePlayer.title;
             }
-
             this.changeActivePlayer();
         }
     }

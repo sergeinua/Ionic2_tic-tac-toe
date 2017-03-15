@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-  <p>{{activePlayer.description}}</p>
+  <p *ngIf="!winner">{{activePlayer.description}}</p>
   <ion-grid *ngIf="!winner">
     <ion-row>
       <ion-col class="field" col-4 (click)="handleProcess('first', activePlayer.legend)">{{field.first}}</ion-col>
@@ -32,5 +32,5 @@
       <ion-col class="field" col-4 (click)="handleProcess('ninth', activePlayer.legend)">{{field.ninth}}</ion-col>
     </ion-row>
   </ion-grid>
-  <p *ngIf="winner">{{winner}}</p>
+  <p *ngIf="winner">{{winner}} wins!</p>
 </ion-content>
